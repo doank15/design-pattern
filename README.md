@@ -3,7 +3,7 @@
 - It improves the reusability, readability, and reliability of code
 
 # 1. Singleton pattern 
-- It is a creative design pattern that limits the number of objects that can **initialize** of a class. Ensure that there is only one instance of a class in any case and provide global access point.
+- It is **`a creational design pattern`** that limits the number of objects that can **initialize** of a class. Ensure that there is only one instance of a class in any case and provide global access point.
 - This pattern is useful when you need to control global state or shared resource access.
 
 # Characteristics
@@ -24,7 +24,7 @@
 
 
 # 2. Factory Pattern
-- It is a creational design pattern that encapsulates the creation of an object, với subclasses deciding which class to instantiate. 
+- It is **`a creational design pattern`** that encapsulates the creation of an object, với subclasses deciding which class to instantiate. 
 - This pattern make the code structure clearer and make it easy to replace or extend product classes.
 # Characteristics
 - Encapsulation: Encapsulates the creation process of the object in the factory class.
@@ -43,10 +43,10 @@
 - Image processing: In image processing, image processor are created according to the different image types such as JPG, PNG.
 
 # 3. Observe Pattern 
-- It is a behavioral design pattern that defines a one-to-many dependency between objects. Do vậy, khi một object change state, all objects mà phụ thuộc vào nó sẽ được notified and automatically updated. 
+- It is **`a behavioral design pattern`** that defines a one-to-many dependency between objects. Do vậy, khi một object change state, all objects mà phụ thuộc vào nó sẽ được notified and automatically updated. 
 - This pattern is well suited for implementing distributed event processing system.
 # Characteristic
-- One-to-may relationships: A topic can have multiple observes.
+- One-to-may relationships: A topic can have **multiple** observes.
 - Abstract coupling: There is an abstract coupling between the observer and the subject, and adding a new observer does not affect the existing system.
 - Dynamic linkage: Observer can join or exist at any time.
 # Advantages
@@ -56,6 +56,29 @@
 - When there are many observer objects, the distribution of notifications can pause performance issues.
 - If the dependencies between the observer and the subject are too complex ---> It can make the system difficult to maintain. 
 # Application scenarios
-- Message system: 
+- Message system 
 - Stock market: Khi stock price updated, tất cả các investor (observe) người subscribe sẽ được thông báo về latest price information.  
 - Resource monitoring: Trong hệ thống giám sát, khi tài nguyên hệ thống (CPU, memory usage) đạt tới ngưỡng, hệ thống giám sát (observe) được thông báo và có hành động thích hợp.
+
+# 4. Decorator Pattern
+- It is a **`structural design pattern`** cho phép users có thể bổ sung thêm một cách linh hoạt các function or responsibilities vào một object bằng cách thêm một decorator object mà không phải modifying the original object.
+# Characteristic
+- Dynamic Scaling: Responsibilities có thể được thêm một cách linh hoạt at runtime.
+- The decorator does not change the interface of the object.
+- Flexibility: Multiple decorators can be combined to add multiple responsibilities to the object.
+# Advantages
+- The responsibilities of the added object are dynamic and revocable.
+- You can wrap an object with multiple decorators and add multiple responsibilities
+- Decorators and objects can be changed independently and are not coupled to each other.
+# Disadvantage
+- Sử dụng quá nhiều decorator làm cho hệ thống trở nên phức tạp và khó hiểu.
+- Nó có thể gây ra multiple-decorator call --> ảnh hưởng tới hiệu suất.
+# Application scenarios
+- Logging: adding logging function without change original objects.
+- Caching
+- Resource management 
+- Security control: authentication, permission checks
+- Transaction processing
+
+# 5. Strategy Pattern
+- It is **`a behavioral design pattern**` định nghĩa một tập hợp các algorithms và đóng gói để chúng có thể hoán đổi cho nhau. 
